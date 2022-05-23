@@ -1,0 +1,44 @@
+<mat-card style="margin: 10px 2px 20px 0px;">
+  <form class="example-form" #addTaskForm="ngForm" (ngSubmit)="onTaskAdd()">
+    <table class="example-full-width" cellspacing="0">
+      <mat-error *ngIf="!loginValid">
+        All field required
+      </mat-error>
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Title</mat-label>
+            <input matInput [(ngModel)]="title" name="title" required type="text" placeholder="Title of Task">
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Description</mat-label>
+            <input matInput [(ngModel)]="description" name="description" required type="text"
+              placeholder="Description of Task">
+          </mat-form-field>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Status</mat-label>
+            <input matInput [(ngModel)]="status" name="status" required type="text" placeholder="Status of Task">
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Created By</mat-label>
+            <input matInput [(ngModel)]="createdby" name="createdby" required type="text"
+              placeholder="Task Creator Name">
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <button mat-raised-button color="primary" [disabled]="!addTaskForm.form.valid" type="submit">Add Task</button>
+      </tr>
+    </table>
+  </form>
+
+</mat-card>
